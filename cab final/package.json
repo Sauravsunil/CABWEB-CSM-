@@ -1,0 +1,23 @@
+{
+  "name": "nodecustomerapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "sync": "node ./models/sync.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mishel Shaji",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cookie-session": "^2.0.0",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "express-validator": "^6.14.2",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.25.7"
+  }
+}

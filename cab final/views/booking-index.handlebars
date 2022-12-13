@@ -1,0 +1,30 @@
+
+<h1 class="text-center">rides</h1>
+<div class="container">
+    <a href="/api/booking" class="btn btn-primary">+ New ride</a>
+    <table class="table table-striped mt-4">
+        <tr>
+            <th>Id</th>
+            <th>Pickup</th>
+            <th>Destination</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Action</th>
+        </tr>
+        {{#each data}}
+        <tr>
+            <td>{{this.dataValues.booking_id}}</td>
+            <td>{{this.dataValues.Pickup}}</td>
+            <td>{{this.dataValues.Destination}}</td>
+            <td>{{this.dataValues.Date}}</td>
+            <td>{{this.dataValues.Time}}</td>
+            <td>
+                <a href="/api/booking/update/{{this.dataValues.booking_id}}">Edit</a> |
+                <a href="/api/booking/delete/{{this.dataValues.booking_id}}" class="text-danger" onclick="return confirm('Are you sure you want to delete this')">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+   
+</div>
+  

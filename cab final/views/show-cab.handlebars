@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      body{
+    overflow-x: hidden;
+    background-image: url(/statics/images/img.jpg);
+background-size: 100vw;
+   
+}
+
+a {
+box-shadow: inset 0 0 0 0 white;
+color: #ffffff;
+margin: 0 -.25rem;
+padding: 0 .25rem;
+transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+a:hover {
+box-shadow: inset 100px 0 0 0 white;
+color: rgb(0, 0, 0);
+}
+body{
+    margin: 0;
+    padding: 0;
+ 
+    
+}
+
+.row{
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+}
+.col-sm-4{
+   
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    border-radius: 8px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+
+}
+    </style>
+    
+</head>
+<div>
+<nav class="navbar" style="height: 75px;border-radius:0%;border:none;background-color: black; color: white;">
+  
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/api/home" style="box-shadow: none;color:white;margin-top: 10px;">Mycab</a>
+                </div>
+                
+              </div>
+            </nav>
+            
+           
+          
+          </ul>
+        </div>
+      </nav>
+<body>
+  
+<div class="container">
+    <table class="table table-striped mt-4">
+        <tr>
+            <th>Cab Id</th>
+            <th>Cab capacity</th>
+            <th>Cab number</th>
+            <th>Action</th>
+        </tr>
+        {{#each data}}
+        <tr>
+            <td>{{this.dataValues.cab_id}}</td>
+            <td>{{this.dataValues.cab_capacity}}</td>
+            <td>{{this.dataValues.cab_number}}</td>
+            
+            <td>
+                <a href="/api/cab/update/{{this.dataValues.cab_id}}">Edit</a> 
+                <a href="/api/cab/delete/{{this.dataValues.cab_id}}">Delete</a>
+                {{!-- <a href="/api/cab/add/{{this.dataValues.driver_id}}">Add</a> --}}
+                
+                
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</div>
+    
+</body>
+</html>

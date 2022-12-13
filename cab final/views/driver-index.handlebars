@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+{{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      body{
+    overflow-x: hidden;
+    background-image: url(/statics/images/img.jpg);
+background-size: 100vw;
+   
+}
+
+a {
+box-shadow: inset 0 0 0 0 white;
+color: #ffffff;
+margin: 0 -.25rem;
+padding: 0 .25rem;
+transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+a:hover {
+box-shadow: inset 100px 0 0 0 white;
+color: rgb(0, 0, 0);
+}
+body{
+    margin: 0;
+    padding: 0;
+ 
+    
+}
+
+.row{
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+}
+.col-sm-4{
+   
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    border-radius: 8px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+
+}
+    </style>
+    
+</head>
+<div>
+<nav class="navbar" style="height: 75px;border-radius:0%;border:none;background-color: black; color: white;">
+  
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/api/home" style="box-shadow: none;color:white;margin-top: 10px;">Mycab</a>
+                </div>
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false" style="color: white;">
+            Account
+          </a>
+          <ul style="margin-left: 85%;" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+           
+            <li><a class="dropdown-item" href="/api/user/logout">Logout</a></li>
+          </ul>
+        </li>
+                
+              </div>
+            </nav>
+            
+           
+          
+          </ul>
+        </div>
+      </nav>
+<body>
+  <a href="/api/driver/add" class="btn btn-primary">+ Add driver</a>
+<div class="container">
+    <table class="table table-striped mt-4">
+        <tr>
+            <th>Driver Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        {{#each data}}
+        <tr>
+            <td>{{this.dataValues.driver_id}}</td>
+            <td>{{this.dataValues.Name}}</td>
+            <td>{{this.dataValues.email}}</td>
+            <td>
+                <a href="/api/driver/update/{{this.dataValues.driver_id}}">Edit</a> 
+                <a href="/api/driver/delete/{{this.dataValues.driver_id}}">Delete</a>
+                <a href="/api/cab/{{this.dataValues.driver_id}}">View cabs</a>
+                <a href="/api/cab/add/{{this.dataValues.driver_id}}">Add cab</a>
+                
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,67 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" 
+rel="stylesheet" crossorigin="anonymous">   
+
+
+<h1 class="text-center">Invoice</h1>
+<div class="container">
+    
+    <table class="table  mt-4">
+        {{#each data}}
+        <tr>
+            <th>Booking Id</th>
+            <td>{{this.dataValues.booking_id}}</td>
+        </tr>
+        <tr>
+            <th>Pick Up</th>
+             <td>{{this.dataValues.Pickup}}</td>
+        </tr>
+        <tr>
+            <th>Destination</th>
+            <td>{{this.dataValues.Destination}}</td>
+
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{this.dataValues.Date}}</td>
+        </tr>
+        <tr>
+            <th>Time</th>
+             <td>{{this.dataValues.Time}}</td>
+        </tr>
+        <tr>
+            <th>Advance</th>
+            <td>Advance Payment received</td>
+        </tr> 
+         
+
+          </div>  
+         
+              
+        
+    </table>
+     
+        
+   {{/each}}
+   <div style="position: absolute;right:50%;top:80%">
+
+    <button class="btn btn-outline-primary" id="printpdf" onclick="printpdf()">Print pdf</button></div> 
+
+    </div>
+</div>
+ <script>
+
+    const btn = document.getElementById('printpdf')
+
+   
+
+    function printpdf(){
+
+        btn.style.display = 'none'
+
+       
+
+        return window.print()
+
+    }
+
+</script>

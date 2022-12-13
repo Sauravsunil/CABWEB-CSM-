@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body{
+    overflow-x: hidden;
+    background-image: url(/statics/images/img.jpg);
+background-size: 100vw;
+  
+}
+
+a {
+box-shadow: inset 0 0 0 0 white;
+color: #ffffff;
+margin: 0 -.25rem;
+padding: 0 .25rem;
+transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+a:hover {
+box-shadow: inset 100px 0 0 0 white;
+color: white;
+}
+body{
+    margin: 0;
+    padding: 0;
+ 
+    
+}
+
+.row{
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+}
+.col-sm-4{
+   
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    border-radius: 8px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+
+}
+.navbar-brand:hover{
+color: black;
+}
+
+</style>
+   
+    
+</head>
+<body>
+    <!--<nav class="navbar" style="border-radius:0%;border:none;background-color: black; color: white;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="home.html" style="box-shadow: none;color:white;">Mycab</a>
+          </div>
+          <ul class="nav navbar-nav out">
+            
+           
+            
+          </ul>
+        </div>
+      </nav>-->
+      <nav class="navbar" style="height: 75px;border-radius:0%;border:none;background-color: black; color: white;">
+  
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/api/home" style="box-shadow: none;color:white;margin-top: 10px;">Mycab</a>
+          </div>
+          
+        </div>
+      </nav>
+
+
+<div class="container" style="background-color: white;width:30%;height: 560px; border-radius: 20px ;padding-left: 50px;padding-right: 50px;">
+    <h2><b>Add driver</b></h2>
+<form id="lf" method = "post">
+  <div class="form-group">
+    <label for="firstname">First name</label>
+    <input type="text" class="form-control" id="fn" placeholder="Enter first name" name="firstname" required>
+  </div>
+  <div class="form-group">
+    <label for="secondname">Second name:</label>
+    <input type="text" class="form-control" id="sn" placeholder="Enter second name" name="secondname" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" id="em" placeholder="Enter email" name="email" required>
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone:</label>
+    <input type="text" class="form-control" id="ph" placeholder="Enter phone" name="phone" required>
+  </div>
+
+  
+
+ 
+  
+  
+    
+ 
+ 
+  <button type="submit" class="btn btn-default" id="btnsub" style="color:white;background-color:black ;">Add</button>
+</form>
+</div>    
+
+
+    <script>
+var firstname=document.forms['lf']['fn'];
+var secondname=document.forms['lf']['sn'];
+var email=document.forms['lf']['em'];
+var phone=document.forms['lf']['ph'];
+
+
+document.querySelectorAll('#lf input').forEach(e => {
+    e.addEventListener('keyup',function(event){
+        if(!firstname.validity.valid || !secondname.validity.valid || !email.validity.valid || !phone.validity.valid){
+            btnsub.setAttribute('disabled',true)
+
+
+    }
+    else{
+        btnsub.removeAttribute('disabled',true);
+    }
+})
+    
+});
+
+
+    </script>
+</body>
+</html>
